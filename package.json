@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "local": "file:public/assets/local",
+    "bootstrap": "latest",
+    "holder": "latest",
+    "jquery": "latest",
+    "popper.js": "latest",
+    "rellax": "^1.12.1"
+  }
+}

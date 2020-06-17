@@ -1,0 +1,18 @@
+/.php_cs.cache
+/vendor
+
+# only include .htaccess
+/cache/*
+!/cache/.htaccess
+
+# only include local assets
+/templates/assets/*
+!/templates/assets/local
+
+# only include .htaccess
+/public/assets/local/cache/*
+!/public/assets/local/cache/.htaccess
+
+# Commit your application's lock file https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control
+# You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
+# composer.lock

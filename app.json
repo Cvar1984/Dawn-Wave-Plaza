@@ -1,0 +1,13 @@
+{
+  "buildpacks": [
+    {
+      "url": "https://github.com/carloluis/heroku-buildpack-vim"
+    },
+    {
+      "url" : "heroku/nodejs"
+    },
+    {
+      "url": "heroku/php"
+    }
+  ]
+}
