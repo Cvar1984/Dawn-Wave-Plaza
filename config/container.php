@@ -33,7 +33,7 @@ return [
         $twig = Twig::create(
             $config->getString('templates'),
             [
-                'cache' => $config->getString('cache.twig'),
+                //'cache' => $config->getString('cache.twig'),
             ]
         );
 
