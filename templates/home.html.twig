@@ -3,11 +3,12 @@
     <div class="paper container">
         {% block container %}
         <div class="row flex-spaces child-border">
-            <img src="https://unsplash.it/900">
-            <h1>{{ intro }}</h1>
+            <img src="assets/local/images/logo.png">
             {% if not_found %}
+            <h1>Oops, Pages not found</h1>
             <a class="paper-btn" href="{{ links.home }}">{{ button }}</a>
             {% else %}
+            <h1>Like dew waiting for the sun to rise</h1>
             <a class="paper-btn" href="{{ links.blog }}">{{ button }}</a>
             {% endif %}
         </div>
