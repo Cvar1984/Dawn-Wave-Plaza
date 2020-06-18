@@ -1,0 +1,20 @@
+{% extends 'home.html.twig' %}
+{% block container %}
+<article class="article">
+    {% block article %}
+    {% for x in 1..10 %}
+    <h1 class="rellax-title article-title">
+        <a href="">{{ article_title }}</a>
+    </h1>
+    <img src="https://unsplash.it/900" alt="Random Unsplash">
+    <p class="article-meta">Written by <a href="#">{{ article_meta }}</a></p>
+    <p class="text-lead">{{ article_lead }}</p>
+    <p>{{ article_preview }}</p>
+    <div class="row">
+        <button>Read More</button>
+        <button>{{ x }} Comments</button>
+    </div>
+    {% endfor %}
+    {% endblock %}
+</article>
+{% endblock %}

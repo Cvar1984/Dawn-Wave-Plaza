@@ -6,9 +6,9 @@ use Slim\Middleware\ErrorMiddleware;
 //use Slim\Views\PhpRenderer;
 use Slim\Views\Twig;
 use Odan\Twig\TwigAssetsExtension;
-//use Illuminate\Container\Container as IlluminateContainer;
-//use Illuminate\Database\Connection;
-//use Illuminate\Database\Connectors\ConnectionFactory;
+use Illuminate\Container\Container as IlluminateContainer;
+use Illuminate\Database\Connection;
+use Illuminate\Database\Connectors\ConnectionFactory;
 use Psr\Container\ContainerInterface as Container;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\RequestHandlerInterface as RequestHandler;
@@ -78,19 +78,19 @@ return [
     //        return new PhpRenderer('../templates', $templateVariables);
     //    },
     // Database connection
-    //    Connection::class => function (Container $container) {
-    //        $factory = new ConnectionFactory(new IlluminateContainer());
-    //
-    //        $connection = $factory->make($container
-    //                              ->get(Configuration::class)
-    //                              ->getArray('db'));
-    //
-    //        // Disable the query log to prevent memory issues
-    //        $connection->disableQueryLog();
-    //
-    //        return $connection;
-    //    },
-    //    PDO::class => function (Container $container) {
-    //        return $container->get(Connection::class)->getPdo();
-    //    },
+        Connection::class => function (Container $container) {
+            $factory = new ConnectionFactory(new IlluminateContainer());
+
+            $connection = $factory->make($container
+                                  ->get(Configuration::class)
+                                  ->getArray('db'));
+
+            // Disable the query log to prevent memory issues
+            $connection->disableQueryLog();
+
+            return $connection;
+        },
+        PDO::class => function (Container $container) {
+            return $container->get(Connection::class)->getPdo();
+        },
 ];

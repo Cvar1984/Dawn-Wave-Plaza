@@ -2,6 +2,7 @@
   "dependencies": {
     "local":"file:public/assets/local",
     "local":"file:templates/assets/local",
-    "rellax": "^1.12.1"
+    "rellax": "^1.12.1",
+    "papercss": "^1.6.1"
   }
 }
