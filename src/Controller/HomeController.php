@@ -16,9 +16,7 @@ final class HomeController
             'home.html.twig',
             [
                 'title' => 'Home pages',
-                'app_name' => 'Slim Twig',
-                'intro' => 'The flexible, fast, and secure template engine for PHP',
-                'button' => 'Get Started',
+                'button' => 'Take a coffe',
                 'links' => [
                     'home' => '/home',
                     'profile' => '/profile',

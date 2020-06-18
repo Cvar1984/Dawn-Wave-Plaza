@@ -16,9 +16,6 @@ final class NotFoundController
             'home.html.twig',
             [
                 'title' => 'Page can\'t be found',
-                'app_name' => 'Slim Twig',
-                'intro' => 'Oops, pages not found',
-                'copy_right' => 'Slim Framework, 2020',
                 'button' => 'Fuck go back',
                 'not_found' => true,
                 'links' => [

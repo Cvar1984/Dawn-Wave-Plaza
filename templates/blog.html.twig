@@ -2,14 +2,16 @@
 {% block container %}
 <article class="article">
     {% block article %}
-    {% for x in 1..10 %}
-    <h1 class="rellax-title article-title">
-        <a href="">{{ article_title }}</a>
-    </h1>
-    <img src="https://unsplash.it/900" alt="Random Unsplash">
-    <p class="article-meta">Written by <a href="#">{{ article_meta }}</a></p>
-    <p class="text-lead">{{ article_lead }}</p>
-    <p>{{ article_preview }}</p>
+    {% for x in 0..articles.links|length %}
+    <h2 class="rellax-title article-title">
+        <a href="#{{ articles.links[x]|lower }}">{{ articles.titles[x] }}</a>
+    </h2>
+    <img src="assets/local/images/sample.jpg">
+    {% autoescape 'html' %}
+    <p class="article-meta">Written by {{ articles.metas[x] }}</p>
+    <p class="text-lead">{{ articles.leads[x] }}</p>
+    <p>{{ articles.previews[x] }} ...</p>
+    {% endautoescape %}
     <div class="row">
         <button>Read More</button>
         <button>{{ x }} Comments</button>

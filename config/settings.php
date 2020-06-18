@@ -11,7 +11,6 @@ date_default_timezone_set('Asia/Jakarta');
 $settings = [];
 
 // Path settings
-$settings['base_url'] = 'http://localhost:8080';
 $settings['root'] = dirname(__DIR__);
 $settings['public'] = $settings['root'] . '/public';
 $settings['templates'] = $settings['root'] . '/templates';
@@ -23,7 +22,7 @@ $settings['cache'] = [
 $settings['assets'] = [
     // Public assets cache directory
     'path' => $settings['public'] . '/assets/local/cache',
-    'url_base_path' => $settings['base_url'] . '/assets/local/cache/',
+    'url_base_path' => '/assets/local/cache/',
     //  Should be set to 1 (enabled) in production
     'minify' => 1,
 ];
@@ -46,9 +45,9 @@ $settings['error_handler_middleware'] = [
 $settings['db'] = [
     'driver' => 'sqlite',
     'host' => 'localhost',
-    'database' => 'sqlime',
-    'username' => 'root',
-    'password' => 'root',
+    'database' => 'sqlim',
+    'username' => '',
+    'password' => '',
     'charset' => 'utf8mb4',
     'collation' => 'utf8mb4_unicode_ci',
     'prefix' => '',
