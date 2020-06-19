@@ -4,13 +4,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <base src="http://localhost:8080" target="_blank">
+        <base src="http://localhost:8080" target="_self">
         {{ assets({files:['assets/papercss/dist/paper.min.css']}) }}
         <title>{{ title }}</title>
     </head>
     <nav class="border fixed split-nav">
         <div class="nav-brand">
-            <h3><a href="#">Menu</a></h3>
+            <h3><a href="{{ links.home }}">Home</a></h3>
         </div>
         <div class="collapsible">
             <input id="collapsible1" type="checkbox" name="collapsible1">

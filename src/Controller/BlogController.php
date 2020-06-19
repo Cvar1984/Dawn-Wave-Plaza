@@ -7,19 +7,14 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 final class BlogController
 {
-
     public function __invoke(Request $request, Response $response) : Response
     {
-        for($x = 0; $x<5; $x++) :
-        $articlePreview[$x] = <<<EOA
+        for ($x = 1; $x < 5; $x++):
+            $articlePreview[$x] = <<<EOA
 Gravida neque convallis a cras
-
 Ac turpis egestas integer eget
-
 Tempus egestas sed sed risus
-
 Est ullamcorper eget nulla facilisi
-
 Euismod lacinia at quis risus.
 EOA;
         $articleLead[$x] = substr($articlePreview[$x], 0, 50);
