@@ -78,19 +78,21 @@ return [
     //        return new PhpRenderer('../templates', $templateVariables);
     //    },
     // Database connection
-        Connection::class => function (Container $container) {
-            $factory = new ConnectionFactory(new IlluminateContainer());
+    Connection::class => function (Container $container) {
+        $factory = new ConnectionFactory(new IlluminateContainer());
 
-            $connection = $factory->make($container
-                                  ->get(Configuration::class)
-                                  ->getArray('db'));
+        $connection = $factory->make(
+            $container
+                ->get(Configuration::class)
+                ->getArray('db')
+        );
 
-            // Disable the query log to prevent memory issues
-            $connection->disableQueryLog();
+        // Disable the query log to prevent memory issues
+        $connection->disableQueryLog();
 
-            return $connection;
-        },
-        PDO::class => function (Container $container) {
-            return $container->get(Connection::class)->getPdo();
-        },
+        return $connection;
+    },
+    PDO::class => function (Container $container) {
+        return $container->get(Connection::class)->getPdo();
+    },
 ];

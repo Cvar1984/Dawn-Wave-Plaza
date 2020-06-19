@@ -3,6 +3,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/cvar1984/dawn-wave-plaza/badge)](https://www.codefactor.io/repository/github/cvar1984/dawn-wave-plaza)
 ![PHP Composer](https://github.com/Cvar1984/dawn-wave-plaza/workflows/PHP%20Composer/badge.svg?branch=master)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Build Status](https://travis-ci.com/Cvar1984/Dawn-Wave-Plaza.svg?branch=master)](https://travis-ci.com/Cvar1984/Dawn-Wave-Plaza)
 
 Website made by slim framework
 ## demo

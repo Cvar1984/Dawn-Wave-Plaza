@@ -2,7 +2,7 @@
 {% block container %}
 <article class="article">
     {% block article %}
-    {% for x in 0..articles.links|length %}
+    {% for x in 1..articles.links|length %}
     <h2 class="rellax-title article-title">
         <a href="#{{ articles.links[x]|lower }}">{{ articles.titles[x] }}</a>
     </h2>
