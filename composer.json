@@ -19,8 +19,8 @@
   },
   "scripts" : {
     "clean": [
-      "find ./cache/ -not -name '.htaccess' -delete",
-      "find ./public/assets/local/cache/ -name -no '.htaccess' -delete"
+      "find ./cache/ -type f -not -name '.*' -delete",
+      "find ./public/assets/local/cache/ -type f -not -name '.*' -delete"
     ],
     "csfix": [
       "phpcf apply ./src/*/*",

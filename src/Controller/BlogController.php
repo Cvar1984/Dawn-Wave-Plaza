@@ -9,8 +9,7 @@ final class BlogController
 {
     public function __invoke(Request $request, Response $response) : Response
     {
-        for ($x = 1; $x < 5; $x++):
-            $articlePreview[$x] = <<<EOA
+        for ($x = 1; $x < 5; $x++):$articlePreview[$x] = <<<EOA
 Gravida neque convallis a cras
 Ac turpis egestas integer eget
 Tempus egestas sed sed risus

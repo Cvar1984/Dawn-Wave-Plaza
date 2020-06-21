@@ -21,10 +21,12 @@ return [
     App::class => function (Container $container):App {
         AppFactory::setContainer($container);
         $app = AppFactory::create();
-        //$app->setBasePath('/slim');
+        //$app->setBasePath('/Dawn-Wave-Plaza');
         $route = $app->getRouteCollector();
         $route->setCacheFile(
-            $container->get(Configuration::class)->getString('cache.route')
+            $container
+                ->get(Configuration::class)
+                ->getString('cache.route')
         );
         return $app;
     },
