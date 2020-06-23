@@ -1,22 +1,21 @@
 {% extends 'home.html.twig' %}
 {% block container %}
-<article class="article">
-    {% block article %}
-    {% for x in 1..articles.links|length %}
-    <h2 class="rellax-title article-title">
-        <a href="#{{ articles.links[x]|lower }}">{{ articles.titles[x] }}</a>
-    </h2>
-    <img src="assets/local/images/sample.jpg">
-    {% autoescape 'html' %}
-    <p class="article-meta">Written by {{ articles.metas[x] }}</p>
-    <p class="text-lead">{{ articles.leads[x] }}</p>
-    <p>{{ articles.previews[x] }} ...</p>
-    {% endautoescape %}
-    <div class="row">
-        <button>Read More</button>
-        <button>{{ x }} Comments</button>
-    </div>
-    {% endfor %}
-    {% endblock %}
-</article>
+    <article class="article">
+        {% block article %}
+            {% for key, link in articles.links %}
+                <h2 class="rellax-title article-title">
+                    <a href="{{ link|lower }}">{{ articles.titles[key] }}</a>
+                </h2>
+                <img src="assets/local/images/sample.jpg">
+                {% autoescape 'html' %}
+                <p class="article-meta">Written by {{ articles.metas[key] }}</p>
+                <p class="">{{ articles.previews[key] }} ...</p>
+                {% endautoescape %}
+                <div class="row">
+                    <button>Read More</button>
+                    <button>{{ x }} Comments</button>
+                </div>
+            {% endfor %}
+        {% endblock %}
+    </article>
 {% endblock %}
