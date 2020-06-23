@@ -1,5 +1,7 @@
+# general
 /.php_cs.cache
 /vendor
+/public/adminer.php
 
 # only include .htaccess
 /cache/*
