@@ -2,10 +2,9 @@
 
 use Slim\App;
 use Slim\Middleware\ErrorMiddleware;
-use Psr\Container\ContainerInterface as Container;
-use Selective\Config\Configuration;
 use Slim\Views\TwigMiddleware;
 use Slim\Views\Twig;
+use Psr\Container\ContainerInterface as Container;
 
 return function (App $app, Container $container):void {
     // optional sub directory
@@ -13,6 +12,10 @@ return function (App $app, Container $container):void {
     $app->addBodyParsingMiddleware();
     // Add the Slim built-in routing middleware
     $app->addRoutingMiddleware();
+    // Not found handler
+    $app->add(\App\Middleware\NotFoundMiddleware::class);
+    // database handler
+    $app->add(\App\Middleware\DatabaseMiddleware::class);
     // Catch exceptions and errors
     $app->add(ErrorMiddleware::class);
     // Add Twig-View Middleware
