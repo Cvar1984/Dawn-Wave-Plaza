@@ -8,8 +8,18 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\RequestHandlerInterface as Handler;
 use Illuminate\Database\QueryException;
 
+/**
+ * Class: DatabaseMiddleware
+ *
+ */
 class DatabaseMiddleware
 {
+    /**
+     * __invoke
+     *
+     * @param Request $request
+     * @param Handler $handler
+     */
     public function __invoke(Request $request, Handler $handler)
     {
         try {

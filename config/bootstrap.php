@@ -11,7 +11,7 @@ $containerBuilder->addDefinitions(__DIR__ . '/container.php');
 $container = $containerBuilder->build();
 
 // Create App instance
-$app = $container->get(\Slim\App::class);
+$app = $container->get(\App::class);
 
 // Register routes
 (require __DIR__ . '/routes.php')($app);

@@ -8,8 +8,18 @@ use Psr\Http\Server\RequestHandlerInterface as Handler;
 use Slim\Exception\HttpNotFoundException;
 use Slim\Views\Twig;
 
+/**
+ * Class: NotFoundMiddleware
+ *
+ */
 class NotFoundMiddleware
 {
+    /**
+     * __invoke
+     *
+     * @param Request $request
+     * @param Handler $handler
+     */
     public function __invoke(Request $request, Handler $handler)
     {
         try {

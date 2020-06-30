@@ -7,12 +7,29 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Container\ContainerInterface as Container;
 use Illuminate\Database\Connection;
 
+/**
+ * Class: BlogController
+ *
+ * @final
+ */
 final class BlogController
 {
+    /**
+     * __construct
+     *
+     * @param Container $container
+     */
     public function __construct(Container $container)
     {
         $this->container = $container;
     }
+    /**
+     * __invoke
+     *
+     * @param Request $request
+     * @param Response $response
+     * @return Response
+     */
     public function __invoke(Request $request, Response $response) : Response
     {
         $db = $this->container->get(Connection::class);
