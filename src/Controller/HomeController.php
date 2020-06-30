@@ -5,8 +5,20 @@ namespace App\Controller;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
+/**
+ * Class: HomeController
+ *
+ * @final
+ */
 final class HomeController
 {
+    /**
+     * __invoke
+     *
+     * @param Request $request
+     * @param Response $response
+     * @return Response
+     */
     public function __invoke(Request $request, Response $response) : Response
     {
         // just test if twig is working
