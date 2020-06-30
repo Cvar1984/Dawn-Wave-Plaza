@@ -15,6 +15,19 @@ use Illuminate\Database\Connection;
 final class BlogController
 {
     /**
+     * container
+     *
+     * @var mixed
+     */
+    private $container;
+    /**
+     * db
+     *
+     * @var mixed
+     */
+    private $db;
+
+    /**
      * __construct
      *
      * @param Container $container
@@ -22,6 +35,7 @@ final class BlogController
     public function __construct(Container $container)
     {
         $this->container = $container;
+        $this->db = $this->container->get(\Connection::class);
     }
     /**
      * __invoke
@@ -32,8 +46,7 @@ final class BlogController
      */
     public function __invoke(Request $request, Response $response) : Response
     {
-        $db = $this->container->get(Connection::class);
-        $rows = $db->table('tb_blog')->get();
+        $rows = $this->db->table('tb_blog')->get();
 
         foreach ($rows as $key => $row) {
             $articlesTitle[] = strtoupper($row->article_title);
